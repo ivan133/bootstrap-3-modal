@@ -24,6 +24,7 @@ Modal = {
 			$modal.on('hidden.bs.modal', function(event){
 				Blaze.remove(view)
 				$soloModal = null
+				$('body').addClass('modal-open')
 			})
 			
 			$soloModal = $modal
