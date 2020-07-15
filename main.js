@@ -24,7 +24,12 @@ Modal = {
 			$modal.on('hidden.bs.modal', function(event){
 				Blaze.remove(view)
 				$soloModal = null
-				$('body').addClass('modal-open')
+				// todo it breaks scroll! we need to check if there is an open modal
+				// we have some  anmartorell/meteor-accounts-ui-bootstrap-3 dialogs so normal value is 1
+				if ($('.modal-dialog').length > 1){
+					// we still have modal open
+					$('body').addClass('modal-open')
+				}
 			})
 			
 			$soloModal = $modal
